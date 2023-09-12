@@ -1,0 +1,93 @@
+* {
+  font-family: 'Poppins';
+}
+
+.header h3 {
+  font-weight: 700;
+  font-size: 40px;
+}
+
+.score {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.score .name {
+  background-color: black;
+  color: white;
+  border-radius: 20px 20px 0 0;
+  text-align: center;
+}
+
+.score .userContainer {
+  width: 150px;
+  height: 150px;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.userContainer #userScore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 126px;
+}
+
+.score .comContainer {
+  width: 150px;
+  height: 150px;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.comContainer #comScore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 126px;
+}
+
+.choices {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.choices .choice svg {
+  cursor: pointer;
+  width: 150px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.choices .choice svg:hover {
+  background-color: black;
+  fill: white;
+  transition: 0.5s;
+}
+
+.howTo {
+  display: flex;
+  justify-content: center;
+}
+
+.howTo .howToPlay {
+  background-color: white;
+  border-radius: 20px;
+  width: 50rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.howTo .howToPlay h3 {
+  font-weight: 600;
+}
+
+.howTo .howToPlay h5 {
+  margin-bottom: 20px;
+}
+
