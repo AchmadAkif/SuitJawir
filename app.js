@@ -19,7 +19,6 @@ let selections = {
   }  
 }
 
-
 let choiceObject = {
   'rock':'🪨',
   'paper':'📜',
@@ -30,27 +29,35 @@ let choiceObject = {
 function checker(input) {
   let choices = ['rock','paper','scissor'];
   
-  //Generate COM choice
+  //Determining COM choice
   let generateNum = Math.floor(Math.random()*3);
   let compChoice = choices[generateNum];
 
-  let resultContainer = document.getElementById('result')
-  switch(selections[input][compChoice]) {
-    case 'Win':
-      resultContainer.innerHTML = 'You chose ' + choiceObject[input] + ' and COM chose ' + choiceObject[compChoice] + '. You Win!🎉';
-      userScore++
-      break;
-    case 'Lose':
-      resultContainer.innerHTML = 'You chose ' + choiceObject[input] + ' and COM chose ' + choiceObject[compChoice] + '. You Lose!😥';
-      comScore++
-      break;
-    default:
-      resultContainer.innerHTML = 'You chose ' + choiceObject[input] + ' and COM chose ' + choiceObject[compChoice] + '. Draw!';
-      break;
-  }
+  //Show fake loading while output is delayed
+  let resultContainer = document.getElementById('result');
+  resultContainer.innerHTML = '...';
 
-  let userScoreDisplay = document.getElementById('userDisplay'),
-    comScoreDisplay = document.getElementById('comDisplay');
-  userScoreDisplay.innerHTML = userScore;
-  comScoreDisplay.innerHTML = comScore;
+  //Delay Output
+  setTimeout(() => {
+    let resultContainer = document.getElementById('result')
+    switch(selections[input][compChoice]) {
+      case 'Win':
+        resultContainer.innerHTML = 'You chose ' + choiceObject[input] + ' and COM chose ' + choiceObject[compChoice] + '. You Win!🎉';
+        userScore++
+        break;
+      case 'Lose':
+        resultContainer.innerHTML = 'You chose ' + choiceObject[input] + ' and COM chose ' + choiceObject[compChoice] + '. You Lose!😥';
+        comScore++
+        break;
+      default:
+        resultContainer.innerHTML = 'You chose ' + choiceObject[input] + ' and COM chose ' + choiceObject[compChoice] + '. Draw!';
+        break;
+    }
+
+    //Show User & COM score
+    let userScoreDisplay = document.getElementById('userDisplay'),
+      comScoreDisplay = document.getElementById('comDisplay');
+    userScoreDisplay.innerHTML = userScore;
+    comScoreDisplay.innerHTML = comScore;
+  }, 1000);
 }
